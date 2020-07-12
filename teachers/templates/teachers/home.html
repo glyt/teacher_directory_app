@@ -1,46 +1,17 @@
 {% extends "teachers/base.html" %}
 
 {% block content %}
- <h5>Filter Teachers</h5>
-<form method="GET" action=".">
-     <div class="form-row">
-            <div class="form-group col-12">
-                <div class="input-group">
-                    <input class="form-control py-2 border-right-0 border" type="search" name="first_name_contains" placeholder="First Name contains..." />
-                    <span class="input-group-append">
-                        <div class="input-group-text bg-transparent">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-     <div class="form-row">
-            <div class="form-group col-12">
-                <div class="input-group">
-                    <input class="form-control py-2 border-right-0 border" type="search" name="last_name_contains" placeholder="Last Name contains..." />
-                    <span class="input-group-append">
-                        <div class="input-group-text bg-transparent">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-    <div class="form-row">
-            <div class="form-group col-12">
-                <div class="input-group">
-                    <input class="form-control py-2 border-right-0 border" type="search" name="subject" placeholder="subject" />
-                    <span class="input-group-append">
-                        <div class="input-group-text bg-transparent">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
+<!-- Search Form -->
+ <form class="form-inline my-2 my-lg-0" method="GET" action=".">
+     <div class="col-md-12 text-center">
+          <br>
+         <input class="form-control mr-sm-2" type="search" name="first_name_contains" placeholder="First Name" aria-label="Search">
+         <input class="form-control mr-sm-2" type="search" name="last_name_contains" placeholder="Last Name" aria-label="Search">
+         <input class="form-control mr-sm-2" type="search" name="subject" placeholder="Subject" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     </div>
+ </form>
+<!-- End Search Form -->
 
 <div class="row justify-content-center mt-5">
         <div class="col-md-7 text-center">

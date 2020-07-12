@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+    <link rel="icon" type="image/png"  href="{% static 'teachers/icon_file.png' %}">
     <title>Teacher's Directory</title>
 </head>
 <body>
@@ -18,8 +18,8 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-warning">
 <div class="container">
-    <a class="navbar-brand" href="">
-         <img src="" width="30" height="30" class="d-inline-block align-top">
+    <a class="navbar-brand" href="{% url 'home' %}"">
+         <img src="{% static 'teachers/icon_file.png' %}" width="30" height="30" class="d-inline-block align-top">
         <span>Teacher's Directory</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,15 +30,14 @@
         <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'currentteachers' %}">Current</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'importteacher' %}">Import</a>
+                    <a class="nav-link" href="{% url 'currentteachers' %}">Teachers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'createteacher' %}">Create</a>
+                    <a class="nav-link" href="{% url 'createteacher' %}">Add Teacher</a>
                 </li>
-
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'importteacher' %}">Import File</a>
+                </li>
         </ul>
     {% endif %}
     <ul class="navbar-nav ml-auto">
