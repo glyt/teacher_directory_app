@@ -1,4 +1,4 @@
-# teacher_directory_app
+# Cloning Teacher Directory App
 
 To see the Teacher directory app in action, clone the repository and run below locally:
 To start create a new project and activate the virtual environment then run below in your terminal.
@@ -10,6 +10,8 @@ $ cd teacherdirectory-project_app
 $ pip install -r requirements.txt
 
 $ python manage.py migrate
+
+$ python manage.py collectstatic
 
 $ python manage.py runserver
 
