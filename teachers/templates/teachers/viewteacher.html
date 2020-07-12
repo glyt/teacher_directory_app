@@ -1,0 +1,23 @@
+{% extends "teachers/base.html" %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="{{ teacher.photo.url }}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <label class="mr-sm-2">First Name:</label>{{ teacher.first_name }}<br>
+      <label class="mr-sm-2">Last Name:</label>{{ teacher.last_name }}<br>
+       <label class="mr-sm-2">Email Address:</label>{{ teacher.email }}<br>
+        <label class="mr-sm-2">Phone:</label>{{ teacher.phone }}<br>
+        <label class="mr-sm-2">Room:</label>{{ teacher.room }}<br>
+        <label class="mr-sm-2">Subjects:</label><br>
+            {% for p in teacher.subject_set.all %}
+                {{ p.subject }}<br>
+            {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+
