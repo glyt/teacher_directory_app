@@ -5,6 +5,11 @@
     {% csrf_token %}
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
             <h2>Import Teacher</h2>
              <input class="btn btn-primary" type="file" name="file">
              <p>ONLY accepts csv files</p>
