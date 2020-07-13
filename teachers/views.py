@@ -58,7 +58,13 @@ def loginuser(request):
 
 def currentteachers(request):
     teachers = Teacher.objects.all()
-    subjects = Subject.objects.all()
+
+    # Pagination
+    paginator = Paginator(teachers, 10)
+    page_number = request.GET.get('page')
+    teachers = paginator.get_page(page_number)
+
+    # Searching teachers
     first_name_contains_query = request.GET.get('first_name_contains')
     last_name_contains_query = request.GET.get('last_name_contains')
     subject_query = request.GET.get('subject')
@@ -77,7 +83,6 @@ def currentteachers(request):
 
     context = {
         'queryset': teachers,
-        'subject_query': subjects
     }
     return render(request, 'teachers/currentteachers.html', context)
 
