@@ -11,8 +11,6 @@ $ pip install -r requirements.txt
 
 $ python manage.py migrate
 
-$ python manage.py collectstatic
-
 $ python manage.py runserver
 
 Note: Create admin superuser to Login to be able to Import and Crate new teacher.
