@@ -9,9 +9,18 @@ from django.contrib.auth import login, logout, authenticate
 from .models import Teacher, Subject
 from .forms import TeacherForm
 from django.forms import modelformset_factory
+from django.core.paginator import Paginator
+
 
 def home(request):
     teachers = Teacher.objects.all()
+
+    # Pagination
+    paginator = Paginator(teachers, 10)
+    page_number = request.GET.get('page')
+    teachers = paginator.get_page(page_number)
+
+    # Searching teachers
     first_name_contains_query = request.GET.get('first_name_contains')
     last_name_contains_query = request.GET.get('last_name_contains')
     subject_query = request.GET.get('subject')

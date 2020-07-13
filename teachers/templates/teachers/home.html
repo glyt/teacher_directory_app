@@ -1,5 +1,4 @@
 {% extends "teachers/base.html" %}
-
 {% block content %}
 <!-- Search Form -->
  <form class="form-inline my-2 my-lg-0" method="GET" action=".">
@@ -42,8 +41,25 @@
                       </tbody>
                     {% endfor %}
                 </table>
+            <!-- pagination-->
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if queryset.has_previous %}
+                            <a href="?page=1">First</a>
+                            <a href="?page={{ queryset.previous_page_number }}">Previous</a>
+                        {% endif %}
 
+                        <span class="current">
+                            Page {{ queryset.number }} of {{ queryset.paginator.num_pages }}.
+                        </span>
 
+                        {% if queryset.has_next %}
+                            <a href="?page={{ queryset.next_page_number }}">Next</a>
+                            <a href="?page={{ queryset.paginator.num_pages }}">Last</a>
+                        {% endif %}
+                    </span>
+                </div>
+            <!-- End pagination-->
         </div>
 </div>
 
