@@ -1,4 +1,4 @@
-# Cloning Teacher Directory App
+# Teacher Directory App
 
 To see the Teacher directory app in action, clone the repository and run below locally:
 
